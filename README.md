@@ -5,15 +5,15 @@ Marketing site for [Spotlight for Windows](https://github.com/Rishiraj1729/Spotl
 ## Develop
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 ## Build
 
 ```bash
-pnpm build
-pnpm preview
+npm run build
+npm run preview
 ```
 
 Deploy the `dist/` folder to GitHub Pages, Netlify, Vercel, or any static host.
@@ -21,4 +21,4 @@ Deploy the `dist/` folder to GitHub Pages, Netlify, Vercel, or any static host.
 ## Assets
 
 - `public/screenshots/` — product screenshots from the app
-- `public/spotlight-ad.mp4` — promotional video (optional section)
+- `public/spotlight-ad.mp4` — promotional video in the hero section

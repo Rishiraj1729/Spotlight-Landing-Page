@@ -1,5 +1,6 @@
 import { motion, type HTMLMotionProps } from 'framer-motion';
 import type { ReactNode } from 'react';
+import { DOWNLOAD_URL } from '../constants';
 
 type FadeInProps = HTMLMotionProps<'div'> & {
   children: ReactNode;
@@ -45,7 +46,7 @@ export function DownloadButton({ className = '', size = 'default' }: DownloadBut
 
   return (
     <a
-      href="https://github.com/Rishiraj1729/Spotlight/releases/latest"
+      href={DOWNLOAD_URL}
       className={`cta-button inline-flex items-center justify-center rounded-full font-semibold text-white ${sizeClasses} ${className}`}
     >
       Download for Windows

@@ -2,6 +2,8 @@ export const GITHUB_REPO = 'https://github.com/Rishiraj1729/Spotlight';
 export const GITHUB_PROFILE = 'https://github.com/Rishiraj1729';
 export const GITHUB_USER = 'Rishiraj1729';
 export const CONTACT_EMAIL = 'rishi241raj@gmail.com';
+export const DOWNLOAD_URL =
+  'https://github.com/Rishiraj1729/Spotlight/releases/download/v0.2.1/Spotlight_0.2.1_x64-setup.exe';
 export const GITHUB_RELEASES = 'https://github.com/Rishiraj1729/Spotlight/releases/latest';
 export const GITHUB_STARS =
   'https://img.shields.io/github/stars/Rishiraj1729/Spotlight?style=for-the-badge&logo=github&label=Stars&color=080808&labelColor=1a1a1e';

@@ -34,15 +34,41 @@ function Nav() {
 
 function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const playCountRef = useRef(0);
+  const audioEnabledRef = useRef(false);
+  const finishedRef = useRef(false);
   const [muted, setMuted] = useState(true);
+  const [audioEnabled, setAudioEnabled] = useState(false);
+  const [finished, setFinished] = useState(false);
 
   const unmute = () => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || finishedRef.current) return;
     video.muted = false;
     video.volume = 1;
+    video.loop = false;
+    playCountRef.current = 0;
+    audioEnabledRef.current = true;
     void video.play();
     setMuted(false);
+    setAudioEnabled(true);
+  };
+
+  const handleEnded = () => {
+    if (!audioEnabledRef.current || finishedRef.current) return;
+
+    playCountRef.current += 1;
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (playCountRef.current < 2) {
+      video.currentTime = 0;
+      void video.play();
+    } else {
+      video.pause();
+      finishedRef.current = true;
+      setFinished(true);
+    }
   };
 
   return (
@@ -58,13 +84,14 @@ function HeroVideo() {
           className="w-full rounded-xl"
           autoPlay
           muted
-          loop
+          loop={!audioEnabled}
           playsInline
           poster="/screenshots/spotlight-search.png"
+          onEnded={handleEnded}
         >
           <source src="/spotlight-ad.mp4" type="video/mp4" />
         </video>
-        {muted && (
+        {muted && !finished && (
           <button
             type="button"
             onClick={unmute}

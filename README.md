@@ -16,7 +16,23 @@ npm run build
 npm run preview
 ```
 
-Deploy the `dist/` folder to GitHub Pages, Netlify, Vercel, or any static host.
+## Deploy on Vercel
+
+1. Go to [vercel.com/new](https://vercel.com/new)
+2. Import **Rishiraj1729/Spotlight-Landing-Page** from GitHub
+3. Vercel auto-detects Vite — leave defaults:
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+4. Click **Deploy**
+
+Every push to `main` redeploys automatically.
+
+Or deploy from CLI:
+
+```bash
+npm i -g vercel
+vercel
+```
 
 ## Assets
 
